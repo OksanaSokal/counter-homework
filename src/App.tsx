@@ -6,36 +6,42 @@ import {CounterView} from './components/CounterView/CounterView';
 
 
 function App() {
-    const [value, setValue] = useState(0)
+    const [value, setValue] = useState(Number(localStorage.getItem('startValue')) || 0)
 
     const incrementHandler = () => {
         setValue(value + 1)
     }
 
-    const [maxValue, setMaxValue] = useState(5)
+    const [isChanged, setIsChanged] = useState(false);
+
+    const [maxValue, setMaxValue] = useState( Number(localStorage.getItem('maxValue')) || 5)
     const getMaxValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setMaxValue(+e.currentTarget.value)
+        setIsChanged(true);
     }
 
-    const [startValue, setStartValue] = useState(0)
+    const [startValue, setStartValue] = useState(Number(localStorage.getItem('startValue')) || 0)
     const getStartValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setStartValue(+e.currentTarget.value)
+        setIsChanged(true);
     }
 
-    // useEffect(()=>{
-    //     localStorage.setItem('startValue', JSON.stringify(startValue))
-    //     localStorage.setItem('maxValue', JSON.stringify(maxValue))
-    // },[startValue, maxValue])
+    useEffect(()=>{
+        localStorage.setItem('startValue', JSON.stringify(startValue))
+        localStorage.setItem('maxValue', JSON.stringify(maxValue))
+    },[startValue, maxValue])
+
+
 
     useEffect(() => {
         if (startValue >= maxValue || startValue < 0 || maxValue < 0) {
             setError(true)
             setDisabled(true)
-        } else {
+        } else if (isChanged)  {
             setError(false)
             setDisabled(false)
         }
-    }, [startValue, maxValue]);
+    }, [startValue, maxValue, isChanged]);
 
     const reset = () => {
         startValue ? setValue(startValue) : setValue(0)
@@ -43,6 +49,8 @@ function App() {
 
     const setRange = () => {
         setValue(startValue)
+        setIsChanged(false)
+
     }
 
     const [error, setError] = useState(false)
@@ -52,11 +60,11 @@ function App() {
         <div className="App">
             <div className={s.container}>
                 <Settings disabled={disabled} getStartValueHandler={getStartValueHandler} maxValue={maxValue}
-                          startValue={startValue} getMaxValueHandler={getMaxValueHandler} setRange={setRange}/>
+                          startValue={startValue} getMaxValueHandler={getMaxValueHandler} setRange={setRange} error={error}/>
             </div>
             <div className={s.container}>
-                <CounterView value={value} error={error} maxValue={maxValue} increment={incrementHandler}
-                             reset={reset}/>
+                <CounterView value={value} error={error} startValue={startValue} maxValue={maxValue} increment={incrementHandler}
+                             reset={reset} isChanged={isChanged} />
             </div>
 
         </div>

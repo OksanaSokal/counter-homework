@@ -10,6 +10,7 @@ export type SettingsType = {
     maxValue: number
     startValue: number
     setRange: () => void
+    error: boolean
 }
 
 export const Settings = ({
@@ -18,13 +19,14 @@ export const Settings = ({
                              maxValue,
                              startValue,
                              getMaxValueHandler,
-                             setRange
+                             setRange,
+    error
                          }: SettingsType) => {
     return (
         <>
             <div className={s.wrapper}>
-                <Input title={'max value: '} type={'number'} onChange={getMaxValueHandler} value={maxValue}/>
-                <Input title={'start value: '} type={'number'} onChange={getStartValueHandler} value={startValue}/>
+                <Input title={'max value: '} type={'number'} onChange={getMaxValueHandler} value={maxValue}  className={error ? s.input_error : ''}/>
+                <Input title={'start value: '} type={'number'} onChange={getStartValueHandler} value={startValue}  className={error ? s.input_error : ''}/>
             </div>
             <div className={s.wrapper}>
                 <Button className={s.button} title={'set'} onClick={setRange} disabled={disabled}/>

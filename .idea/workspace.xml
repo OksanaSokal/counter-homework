@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d29a84f6-ac37-43f3-b172-4e720451bd66" name="Changes" comment="made counter with basic settings">
-      <change afterPath="$PROJECT_DIR$/src/components/Button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CounterView/CounterView.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CounterView/CounterView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/EditableSpan.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Settings/Settings.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Settings/Settings.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/style.module.css" afterDir="false" />
+    <list default="true" id="d29a84f6-ac37-43f3-b172-4e720451bd66" name="Changes" comment="finish first option">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CounterView/CounterView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CounterView/CounterView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Settings/Settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Settings/Settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/style.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/style.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +110,7 @@
       <workItem from="1725623194410" duration="387000" />
       <workItem from="1725623788224" duration="26760000" />
       <workItem from="1726052058125" duration="2827000" />
-      <workItem from="1728644998048" duration="6974000" />
+      <workItem from="1728644998048" duration="20630000" />
     </task>
     <task id="LOCAL-00001" summary="start project">
       <option name="closed" value="true" />
@@ -183,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725624187072</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="made counter with basic settings">
+      <option name="closed" value="true" />
+      <created>1728651995982</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728651995982</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +193,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start project" />
     <MESSAGE value="made counter with basic settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="made counter with basic settings" />
+    <MESSAGE value="finish first option" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish first option" />
   </component>
 </project>
