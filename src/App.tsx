@@ -25,12 +25,13 @@ function App() {
         if (inputValue ==='' || regex.test(inputValue)) {
             setMaxValue(+inputValue);
             setIsChanged(true);
+            // setMaxValue(+e.currentTarget.value)
+            // setIsChanged(true);
         } else {
             setError(true);
         }
 
-        // setMaxValue(+e.currentTarget.value)
-        // setIsChanged(true);
+
     }
 
     const [startValue, setStartValue] = useState(Number(localStorage.getItem('startValue')) || 0)
