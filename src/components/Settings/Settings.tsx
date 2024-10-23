@@ -20,16 +20,20 @@ export const Settings = ({
                              startValue,
                              getMaxValueHandler,
                              setRange,
-    error
+                             error
                          }: SettingsType) => {
+
+    const disabledBtn = !disabled || error
+    const classNameMaxValue = error ? s.input_error : '';
+    const classNameStartValue = error ? s.input_error : '';
     return (
         <>
             <div className={s.wrapper}>
-                <Input title={'max value: '} type={'number'} onChange={getMaxValueHandler} value={maxValue}  className={error ? s.input_error : ''}/>
-                <Input title={'start value: '} type={'number'} onChange={getStartValueHandler} value={startValue}  className={error ? s.input_error : ''}/>
+                <Input title={'max value: '} type={'number'} onChange={getMaxValueHandler} value={maxValue}  className={classNameMaxValue}/>
+                <Input title={'start value: '} type={'number'} onChange={getStartValueHandler} value={startValue}  className={classNameStartValue}/>
             </div>
             <div className={s.wrapper}>
-                <Button className={s.button} title={'set'} onClick={setRange} disabled={disabled}/>
+                <Button className={s.button} title={'set'} onClick={setRange} disabled={disabledBtn}/>
             </div>
         </>
     )

@@ -14,11 +14,11 @@ export const Input = ({title, type, onChange, value, className}: InputType) => {
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         onChange(e)
     }
-
+const classNameAdd = className ? `${s.input} ${className}`: s.input
     return (
         <div className={s.input_wrap}>
             <span>{title}</span>
-            <input  onChange={onChangeHandler} type={type}  className={className ? `${s.input} ${className}`: s.input} value={value} ></input>
+            <input  onChange={onChangeHandler} type={type}  className={classNameAdd} value={value} ></input>
         </div>
     );
 };

@@ -1,5 +1,6 @@
-import s from '../style.module.css';
-import {Button} from '../Button';
+import s from '../components/style.module.css';
+import {Button} from '../components/Button';
+
 
 
 export type CounterViewProps = {
@@ -10,21 +11,24 @@ export type CounterViewProps = {
     increment: () => void
     reset: () => void
     isChanged: boolean
+    openSettings?: () => void
 }
 
-export const CounterView = ({
+export const CounterViewAdditional = ({
                                 value,
-                                startValue,
                                 maxValue,
                                 error,
                                 increment,
                                 isChanged,
                                 reset,
+                                openSettings,
                             }: CounterViewProps) => {
 
-    const disabledInc = value >= maxValue || isChanged
-    const disabledReset = +value === startValue || isChanged
-    const className = value === maxValue ? `${s.max} ${s.number}` : s.number
+    const openSettingsHandler =() => {
+        if (openSettings) {
+            openSettings()
+        }
+    }
     return (
         <>
             <div className={s.wrapper}>
@@ -34,7 +38,7 @@ export const CounterView = ({
                 ) : isChanged ? (
                     <span>{'Enter values and press "set"'}</span>
                 ) : (
-                    <span className={className}>{value}</span>
+                    <span className={value === maxValue ? `${s.max} ${s.number}` : s.number}>{ value}</span>
                 )
                 }
 
@@ -42,11 +46,11 @@ export const CounterView = ({
             </div>
             <div className={s.wrapper}>
                 <div className={s.button_box}>
-                    <Button className={s.button} title={'inc'} onClick={increment} disabled={disabledInc}/>
-                    <Button className={s.button} title={'reset'} onClick={reset} disabled={disabledReset}/>
+                    <Button className={s.button} title={'inc'} onClick={increment} disabled={value >= maxValue}/>
+                    <Button className={s.button} title={'reset'} onClick={reset} disabled={+value === 0}/>
+                    <Button className={s.button} title={'set'} onClick={openSettingsHandler}/>
                 </div>
             </div>
         </>
     )
 }
-
