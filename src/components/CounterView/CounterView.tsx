@@ -23,8 +23,13 @@ export const CounterView = ({
                             }: CounterViewProps) => {
 
     const disabledInc = value >= maxValue || isChanged
-    const disabledReset = +value === startValue || isChanged
+    const disabledReset = value === startValue || isChanged
     const className = value === maxValue ? `${s.max} ${s.number}` : s.number
+
+    // console.log('value -', value)
+    // console.log('startValue - ',startValue)
+    // console.log('maxValue - ',maxValue)
+    // console.log('isChanged -',isChanged)
     return (
         <>
             <div className={s.wrapper}>

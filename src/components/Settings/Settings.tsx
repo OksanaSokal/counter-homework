@@ -29,8 +29,8 @@ export const Settings = ({
     return (
         <>
             <div className={s.wrapper}>
-                <Input title={'max value: '} type={'number'} onChange={getMaxValueHandler} value={maxValue}  className={classNameMaxValue}/>
-                <Input title={'start value: '} type={'number'} onChange={getStartValueHandler} value={startValue}  className={classNameStartValue}/>
+                <Input title={'max value: '} type={'number'} onChange={getMaxValueHandler} value={+maxValue}  className={classNameMaxValue}/>
+                <Input title={'start value: '} type={'number'} onChange={getStartValueHandler} value={+startValue}  className={classNameStartValue}/>
             </div>
             <div className={s.wrapper}>
                 <Button className={s.button} title={'set'} onClick={setRange} disabled={disabledBtn}/>
